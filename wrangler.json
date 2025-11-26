@@ -1,12 +1,12 @@
 {
-  "name": "{{ .project_name}}",
+  "name": "stw-sample",
   "compatibility_date": "2025-11-17",
   "assets": {
     "directory": "./dist"
   },
   "routes": [
     {
-      "pattern": "{{ .domain }}",
+      "pattern": "stw-sample.emiralabs.com",
       "custom_domain": true
     }
   ]
