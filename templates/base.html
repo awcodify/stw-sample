@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimal Site</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    {{template "header.html" .}}
+    <main>
+        {{.Content}}
+    </main>
+    {{template "footer.html" .}}
+    <script src="/assets/js/app.js"></script>
+    <!-- DO NOT EDIT BELOW -->
+    {{if .IsDev}}
+    <script>
+        console.log('Connecting to EventSource');
+        const evtSource = new EventSource('/__reload');
+        evtSource.onopen = function() {
+            console.log('EventSource connected');
+        };
+        evtSource.onmessage = function(event) {
+            console.log('Received event:', event.data);
+            if (event.data === 'reload') {
+                location.reload();
+            }
+        };
+        evtSource.onerror = function(event) {
+            console.error('EventSource error:', event);
+        };
+    </script>
+    {{end}}
+    <!-- DO NOT EDIT ABOVE -->
+</body>
+</html>

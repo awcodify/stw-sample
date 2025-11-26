@@ -1,0 +1,12 @@
+<header>
+    <div>
+        <h1>
+            <a href="/">Minimal Site</a>
+        </h1>
+        <nav>
+            {{ range .Config.navigations }}
+            <a href="{{.url}}">{{.name}}</a>
+            {{ end }}
+        </nav>
+    </div>
+</header>
